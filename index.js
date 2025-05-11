@@ -383,3 +383,107 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// bg paterns
+
+document.addEventListener('DOMContentLoaded', () => {
+    const patternContainer = document.querySelector('.background-pattern');
+    const gridSize = 150; // Distance between icons in pixels
+    const iconSize = 50; // Base size of each icon
+    const icons = [
+        '<i class="fas fa-screwdriver" aria-hidden="true"></i>',
+        '<i class="fas fa-wrench" aria-hidden="true"></i>',
+        '<i class="fas fa-refrigerator" aria-hidden="true"></i>',
+        '<i class="fas fa-fire-burner" aria-hidden="true"></i>'
+    ];
+
+    function createPattern() {
+        patternContainer.innerHTML = ''; // Clear previous pattern
+        const bodyWidth = document.body.clientWidth;
+        const bodyHeight = document.body.clientHeight;
+        const cols = Math.ceil(bodyWidth / gridSize) + 1;
+        const rows = Math.ceil(bodyHeight / gridSize) + 1;
+
+        let index = 0;
+        for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+                const icon = document.createElement('div');
+                icon.className = 'background-icon';
+                const x = col * gridSize + (Math.random() * 20 - 10); // Slight random offset
+                const y = row * gridSize + (Math.random() * 20 - 10); // Slight random offset
+                const iconType = icons[index % icons.length];
+                icon.style.left = `${x}px`;
+                icon.style.top = `${y}px`;
+                icon.style.width = `${iconSize}px`;
+                icon.style.height = `${iconSize}px`;
+                icon.style.opacity = 0.1;
+                icon.innerHTML = iconType;
+                patternContainer.appendChild(icon);
+                index++;
+            }
+        }
+    }
+
+    createPattern();
+    window.addEventListener('resize', createPattern);
+
+    const navLinks = document.querySelector('.nav-links');
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+});
+
+// map functionality
+
+// Initialize map centered on Casablanca
+const map = L.map('map').setView([33.5731, -7.5898], 12);
+
+// Add OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18
+}).addTo(map);
+
+// Define locations with approximate coordinates
+const locations = [
+    { name: 'Aïn Chock', coords: [33.535, -7.582], address: '123 Example Street' },
+    { name: 'Al Fida', coords: [33.566, -7.605], address: '456 Sample Road' },
+    { name: 'Anfa', coords: [33.595, -7.667], address: '789 Coastal Avenue' },
+    { name: 'Essoukhour Assawda', coords: [33.570, -7.570], address: '101 Market Lane' },
+    { name: 'Hay Hassani', coords: [33.552, -7.652], address: '202 Park Street' },
+    { name: 'Hay Mohammadi', coords: [33.585, -7.570], address: '303 Industrial Road' },
+    { name: 'Maârif', coords: [33.582, -7.635], address: '404 Central Boulevard' }
+];
+
+// Add markers
+locations.forEach(location => {
+    L.marker(location.coords)
+        .addTo(map)
+        .bindPopup(`<b>${location.name}</b><br>${location.address}<br><a href="#">Get Directions</a>`);
+});
+
+// payment form 
+
+document.getElementById('next-button').addEventListener('click', function () {
+    const requiredFields = ['name', 'address', 'phone', 'email'];
+    let valid = true;
+
+    requiredFields.forEach(id => {
+      const input = document.getElementById(id);
+      if (!input.value.trim()) {
+        input.focus();
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    // Hide Step 1 and show Payment Step
+    document.getElementById('step-one').style.display = 'none';
+    document.getElementById('payment').style.display = 'block';
+
+    // Optional: scroll to payment step
+    document.getElementById('payment').scrollIntoView({ behavior: 'smooth' });
+  });
