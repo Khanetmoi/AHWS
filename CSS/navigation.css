@@ -172,7 +172,7 @@ nav .dropdown-content a i {
 /* Mobile Menu */
 @media (max-width: 768px) {
     nav .logo img {
-        width: 40px;
+        width: 60px;
         }
     nav .nav-links {
         display: flex;
