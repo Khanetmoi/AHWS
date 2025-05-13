@@ -1,0 +1,232 @@
+Welcome Section
+#home {
+    /* background: linear-gradient(135deg, #1e40af, #93c5fd, #f59e0b); */
+    color: white;
+    padding: 100px 2px;
+    /* margin-top: 60px; */
+    
+    position: relative;
+    overflow: hidden;
+
+    
+}
+
+#home .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: nowrap;
+}
+#home .illustration {
+    flex: 0 0 50%;
+    min-width: 200px;
+}
+#home .illustration img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+#home .text {
+    flex: 0 0 45%;
+    min-width: 250px;
+    text-align: left;
+    /* background: rgba(255, 255, 255, 0.1); */
+    padding: 30px;
+    /* border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #f59e0b; */
+}
+#home h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+    color: black;
+}
+#home h1 span {
+    font-weight: 400;
+    display: block;
+    font-size: 0.65em;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.9);
+}
+#home h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    line-height: 1.3;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards 0.2s;
+}
+#home p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 90%;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards 0.4s;
+}
+#home .cta-button {
+    background: linear-gradient(135deg, #0b69f5, #2906d9);
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards 0.6s;
+}
+#home .cta-button i {
+    margin-left: 10px;
+    font-size: 16px;
+}
+#home .cta-button:hover {
+    /* background: linear-gradient(135deg, #d97706, #f59e0b); */
+    transform: scale(1.05);
+}
+/* @media (max-width: 768px) {
+    #home {
+        padding: 80px 0 20px 0;
+    }
+    #home .content {
+        display: block; /* Ensures natural flow of child elements 
+        position: relative; /* Positioning context for illustration 
+        min-height: 300px; 
+    }
+    #home .illustration {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 150px; /* Adjust size as needed 
+        height: auto;
+        z-index: 0;/* Places illustration behind text 
+    }
+    #home .text {
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+    }
+    #home h1 {
+        font-size: clamp(24px, 6vw, 32px);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    #home h1 span {
+        font-size: 0.65em;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+    }
+    #home h2 {
+        font-size: clamp(26px, 4vw, 20px);
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.3;
+        margin-bottom: 25px;
+    }
+    #home p {
+        font-size: clamp(20px, 3.5vw, 16px);
+        line-height: 1.6;
+        margin-bottom: 35px;
+        color: white;
+    }
+    #home .cta-button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    #home .wave-divider {
+        height: 60px;
+        background-size: 800px 60px;
+    }
+} */
+
+@media (max-width: 768px) {
+    #home {
+        padding: 80px 0 20px 0;
+    }
+    #home .content {
+        display: block; /* Ensures natural flow of child elements */
+        position: relative; /* Positioning context for illustration */
+        min-height: 300px; 
+    }
+    #home .illustration {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 150px; /* Adjust size as needed */
+        height: auto;
+        z-index: 0; /* Places illustration behind text */
+    }
+    #home .text {
+        flex: 1;
+        min-width: 0;
+        text-align: left;
+        padding: 20px;
+        background: #ffffff; /* Solid white fallback */
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px); /* Added for WebKit browsers */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: #1e293b;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+        #home .text {
+            background: rgba(255, 255, 255, 0.3); /* Less transparent (30% opacity) */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(90px);
+        }
+    }
+    #home h1 {
+        font-size: clamp(24px, 6vw, 32px);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    #home h1 span {
+        font-size: 0.65em;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+    }
+    #home h2 {
+        font-size: clamp(26px, 4vw, 20px);
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.3;
+        margin-bottom: 25px;
+    }
+    #home p {
+        font-size: clamp(20px, 3.5vw, 16px);
+        line-height: 1.6;
+        margin-bottom: 35px;
+        color: white;
+    }
+    #home .cta-button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+   
+}

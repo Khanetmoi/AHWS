@@ -1,0 +1,287 @@
+/* Mission Section */
+#mission {
+    /* background: linear-gradient(135deg, #f59e0b, #1e40af); */
+    color: white;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+}
+
+#mission .container {
+    position: relative;
+    z-index: 1;
+}
+#mission .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+}
+#mission .card {
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)); */
+    background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+}
+
+#mission .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9)); */
+    background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+}
+
+.core-values ,.mission {
+    height: 300px;
+}
+
+#mission .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#mission .card-header .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #1e40af;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+#mission .card-header i {
+    font-size: 20px;
+    color: white;
+}
+#mission .card.vision-card .card-header .icon-wrapper {
+    background: #f59e0b;
+}
+#mission .card.core-values .card-header .icon-wrapper {
+    background: #10b981;
+}
+#mission h3 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #1e40af;
+    margin: 0;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+#mission h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #1e40af, #f59e0b);
+}
+#mission .tagline {
+    font-size: 14px;
+    font-weight: 400;
+    color: #374151;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+#mission p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #374151;
+}
+ #mission ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+#mission ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    padding: 0;
+    max-width: 600px; /* Adjust as needed */
+    margin: 0 auto;
+}
+#mission ul li {
+    
+     /* Align items at the top */
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+#mission ul li strong {
+    min-width: 160px; /* Fixed width for alignment */
+    font-weight: bold;
+    color: #333;
+    font-size: 13px;
+}
+#mission ul li span {
+    flex: 1; /* Take remaining space */
+    color: #666;
+    /* font-weight: 5px; */
+}
+#mission ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #10b981;
+    margin-right: 10px;
+    font-size: 14px;
+}
+#mission ul li strong {
+    font-weight: 600;
+    color: #1e40af;
+    margin-right: 8px;
+}
+#mission .grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+}
+#mission .grid::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+} 
+
+@media (min-width: 768px) {
+    #mission .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    #mission {
+        padding: 60px 15px;
+    }
+    #mission .card {
+        min-height: 350px; /* Allow expansion based on content */
+        padding: 20px; /* Reduced to prevent overflow */
+        box-sizing: border-box; /* Ensure padding doesn’t affect width */
+        width: 100%; /* Consistent width */
+        overflow-y: auto; /* Enable vertical scrolling for overflowing content */
+    }
+    /* Optional scrollbar styling for WebKit browsers (Chrome, Safari) */
+    #mission .card::-webkit-scrollbar {
+        width: 8px;
+    }
+    #mission .card::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    #mission .card::-webkit-scrollbar-thumb {
+        background: #1e40af;
+        border-radius: 4px;
+    }
+    #mission .card::-webkit-scrollbar-thumb:hover {
+        background: #f59e0b;
+    }
+    #mission h3 {
+        font-size: 24px; /* Reduced to fit better */
+    }
+    #mission .tagline {
+        font-size: 16px; /* Reduced to prevent overflow */
+    }
+    #mission p {
+        font-size: 16px; /* Reduced to prevent overflow */
+    }
+    #mission ul li strong {
+        min-width: 100px; /* Reduced to fit better */
+        font-size: 14px; /* Reduced to prevent overflow */
+    }
+    #mission ul li {
+        font-size: 16px; /* Reduced to prevent overflow */
+    }
+    #mission .card-header .icon-wrapper {
+        width: 35px;
+        height: 35px;
+    }
+    #mission .card-header i {
+        font-size: 18px;
+    }
+    #mission .grid::before, #mission .grid::after {
+        display: none;
+    }
+    .core-values {
+        margin-inline: 0; /* Align with other cards */
+        width: 100%; /* Match other cards’ width */
+        min-height: 350px; /* Consistent with other cards */
+        overflow-y: auto; /* Ensure consistency with other cards */
+    }
+    /* Optional scrollbar styling for .core-values */
+    .core-values::-webkit-scrollbar {
+        width: 8px;
+    }
+    .core-values::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+    }
+    .core-values::-webkit-scrollbar-thumb {
+        background: #10b981; /* Matches core-values icon color */
+        border-radius: 4px;
+    }
+    .core-values::-webkit-scrollbar-thumb:hover {
+        background: #f59e0b;
+    }
+}
+#mission .card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+#mission .card:nth-child(1) { animation-delay: 0.2s; }
+#mission .card:nth-child(2) { animation-delay: 0.4s; }
+#mission .card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Zoom-in animation for cards */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

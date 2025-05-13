@@ -1,0 +1,206 @@
+/* Services Section */
+#services {
+    /* background: linear-gradient(135deg, #d97706, #2563eb); */
+    position: relative;
+    overflow: hidden;
+}
+#services .container {
+    position: relative;
+    z-index: 1;
+}
+#services .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+#services .card {
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85)); */
+    background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border-left: 4px solid #f59e0b;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: zoomIn 0.6s ease forwards;
+}
+#services .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9)); */
+    background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+}
+/* Background Icon Styling */
+#services .card .background-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 80px;
+    color: rgba(37, 99, 235, 0.1);
+    z-index: -1;
+}
+#services .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+#services .card-header .icon-wrapper {
+    width: 35px;
+    height: 35px;
+    background: #f59e0b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+#services .card-header i {
+    font-size: 18px;
+    color: white;
+}
+#services .card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e40af;
+    margin: 0;
+}
+#services .card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 10px;
+}
+#services .card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 15px 0;
+}
+#services .card ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #374151;
+    display: flex;
+    align-items: flex-start;
+}
+#services .card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #f59e0b;
+    margin-right: 8px;
+    font-size: 12px;
+}
+#services .card .cta-button {
+    display: inline-flex;
+    align-items: center;
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+#services .card .cta-button i {
+    margin-left: 8px;
+    font-size: 12px;
+}
+#services .card .cta-button:hover {
+    background: #1e40af;
+    transform: scale(1.05);
+}
+#services .card:nth-child(1) { animation-delay: 0.1s; }
+#services .card:nth-child(2) { animation-delay: 0.2s; }
+#services .card:nth-child(3) { animation-delay: 0.3s; }
+#services .card:nth-child(4) { animation-delay: 0.4s; }
+#services .card:nth-child(5) { animation-delay: 0.5s; }
+#services .card:nth-child(6) { animation-delay: 0.6s; }
+@media (min-width: 768px) {
+    #services .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    #services .card .background-icon {
+        font-size: 100px;
+        right: 15px;
+    }
+}
+@media (min-width: 1024px) {
+    #services .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #services .card .background-icon {
+        font-size: 120px;
+        right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    #services {
+        padding: 60px 15px;
+    }
+    #services .grid {
+        width: 100%; /* Ensure grid takes full width */
+        margin: 0 auto; /* Center grid within container */
+    }
+    #services .card {
+        width: 95%; /* Slightly less than full width for subtle margins */
+        min-height: 230px; /* Changed from height to min-height to allow expansion */
+        margin-inline: auto;
+        padding: 25px; /* Increased padding for more space */
+        box-sizing: border-box; /* Ensure padding doesn’t affect width */
+        overflow: hidden; /* Prevent any horizontal overflow */
+    }
+    #services .card h3 {
+        font-size: 22px; /* Slightly reduced to fit better */
+        word-break: break-word; /* Handle long titles */
+        overflow-wrap: break-word; /* Fallback for older browsers */
+        margin-right: 10px; /* Prevent title from touching right edge */
+    }
+    #services .card p {
+        font-size: 16px; /* Reduced slightly for balance */
+    }
+    #services .card ul li {
+        font-size: 14px; /* Reduced to prevent crowding */
+        margin-bottom: 6px;
+    }
+    #services .card ul li::before {
+        font-size: 14px; /* Match li font size */
+        margin-right: 6px;
+    }
+    #services .card .cta-button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+    #services .card .cta-button i {
+        font-size: 11px;
+    }
+    #services .card-header {
+        flex-wrap: wrap; /* Allow header to wrap if title is long */
+        gap: 10px; /* Add spacing between icon and title */
+    }
+    #services .card-header .icon-wrapper {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0; /* Prevent icon from shrinking */
+    }
+    #services .card-header i {
+        font-size: 16px;
+    }
+    #services .card .background-icon {
+        font-size: 60px;
+        right: 10px;
+    }
+}

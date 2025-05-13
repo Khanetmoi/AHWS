@@ -1,0 +1,879 @@
+/* Pricing Section */
+#pricing {
+    /* background: linear-gradient(135deg, #d97706, #2563eb); */
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+#pricing .container {
+    position: relative;
+    z-index: 1;
+}
+#pricing h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+#pricing .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+}
+#pricing .card {
+    
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Neutral black text */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid transparent;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    animation: bounceIn 0.8s ease forwards;
+    width: 250px; /* Fixed width for uniformity */
+    min-height: 400px; /* Fixed minimum height for uniformity */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#pricing .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(245, 158, 11, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px;
+    z-index: 0;
+}
+#pricing .card:hover::before {
+    opacity: 1;
+}
+#pricing .card > * {
+    position: relative;
+    z-index: 1;
+}
+/* #pricing .card.standard {
+    border-left: 5px solid #1e40af;
+}
+#pricing .card.gold {
+    border-left: 5px solid #f59e0b;
+}
+     */
+#pricing .card.platinum {
+    border-left: 5px solid #d97706;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+    /*  
+#pricing .card.one-time {
+    border-left: 5px solid #374151;
+} */
+#pricing .card:hover {
+    background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+            margin-left: auto;
+            margin-right: auto;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+#pricing .card.recommended::after {
+    content: 'Recommended';
+    position: absolute;
+    top: -12px;
+    right: 12px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transform: rotate(5deg);
+}
+#pricing .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#pricing .card-header .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background: #1e40af;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#pricing .card-header i {
+    font-size: 20px;
+    color: white;
+}
+#pricing .card.gold .card-header .icon-wrapper {
+    background: #f59e0b;
+}
+#pricing .card.platinum .card-header .icon-wrapper {
+    background: #10b981;
+}
+#pricing .card.one-time .card-header .icon-wrapper {
+    background: #374151;
+}
+#pricing .card h3 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+    color: #1e40af;
+    letter-spacing: 0.5px;
+}
+#pricing .price {
+    margin: 20px 0;
+}
+#pricing .price-main {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1e40af;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+#pricing .price-sub {
+    font-size: 16px;
+    color: #000000; /* Neutral black text */
+    display: block;
+    margin-top: 8px;
+    font-style: italic;
+}
+#pricing .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+    text-align: left;
+}
+#pricing .card ul li {
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+#pricing .card ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #f59e0b;
+    margin-right: 10px;
+    font-size: 14px;
+}
+#pricing .card .cta-button {
+    display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #d97706, #2563eb); /* Orange to blue gradient */
+            color: #ffffff; /* Neutral white text */
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+#pricing .card .cta-button i {
+    margin-left: 10px;
+    font-size: 14px;
+}
+#pricing .card .cta-button:hover {
+    background: linear-gradient(135deg, #2563eb, #d97706); /* Blue to orange gradient */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+#pricing .card:nth-child(1) { animation-delay: 0.1s; }
+#pricing .card:nth-child(2) { animation-delay: 0.2s; }
+#pricing .card:nth-child(3) { animation-delay: 0.3s; }
+#pricing .card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Toggle Switch for Pricing */
+#pricing .toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 18px;
+}
+#pricing .toggle-container label {
+    margin: 0 12px;
+    font-weight: 700;
+}
+#pricing .toggle-switch {
+    position: relative;
+    width: 70px;
+    height: 34px;
+}
+#pricing .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+#pricing .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #a1a1a1, #7a7a7a);
+    transition: background 0.4s ease, transform 0.4s ease;
+    border-radius: 34px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#pricing .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: linear-gradient(135deg, #ffffff, #e5e5e5);
+    transition: transform 0.4s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#pricing .toggle-switch input:checked + .toggle-slider {
+    background: linear-gradient(135deg, #34d399, #10b981);
+}
+#pricing .toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(36px);
+}
+#pricing .toggle-label-monthly {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+#pricing .toggle-label-yearly {
+    color: white;
+    transition: color 0.3s ease;
+}
+#pricing .toggle-switch input:checked ~ .toggle-label-monthly {
+    color: white;
+}
+#pricing .toggle-switch input:checked ~ .toggle-label-yearly {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Comparison Table */
+#pricing .comparison-table {
+    margin-top: 50px;
+    overflow-x: auto;
+    padding: 0 10px;
+}
+#pricing .comparison-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards 0.5s;
+    overflow: hidden;
+}
+#pricing .comparison-table th, #pricing .comparison-table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 16px;
+}
+#pricing .comparison-table th {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#pricing .comparison-table th.highlight-header {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+#pricing .comparison-table th:first-child {
+    border-top-left-radius: 20px;
+}
+#pricing .comparison-table th:last-child {
+    border-top-right-radius: 20px;
+}
+#pricing .comparison-table td {
+    color: #1f2937;
+    background: #f9fafb;
+    transition: background 0.3s ease;
+}
+#pricing .comparison-table tr:nth-child(even) td {
+    background: #f1f5f9;
+}
+#pricing .comparison-table tr:hover td {
+    background: #e5e7eb;
+}
+#pricing .comparison-table td.highlight {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    font-weight: 700;
+    color: #1e40af;
+}
+#pricing .comparison-table td i.icon {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+#pricing .comparison-table td i.fa-check-circle {
+    color: #10b981;
+}
+#pricing .comparison-table td i.fa-times-circle {
+    color: #ef4444;
+}
+#pricing .comparison-table td:hover i.icon {
+    transform: scale(1.2);
+}
+#pricing .comparison-table tr:last-child td {
+    border-bottom: none;
+}
+#pricing .comparison-table tr:last-child td:first-child {
+    border-bottom-left-radius: 20px;
+}
+#pricing .comparison-table tr:last-child td:last-child {
+    border-bottom-right-radius: 20px;
+}
+
+/* Popup Styles */
+.popup {
+  display: none;
+   justify-content: center;
+  align-items: center; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  /* opacity: 0; */
+  /* animation: fadeIn 0.5s ease forwards; */
+  padding: 20px; /* Add padding to prevent touching screen edges */
+  box-sizing: border-box;
+}
+.popup-content {
+    background: linear-gradient(135deg, #f9fafb, #e0e7ff);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    height: 90vh;
+    max-width: 600px;
+    position: relative;
+    transform: scale(0.9);
+    animation: popupScaleIn 0.5s ease forwards;
+    margin: 20px 0;
+}
+.popup-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.popup-header h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e40af;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+.progress-steps .step {
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+.progress-steps .step.active {
+    color: blue;
+    font-weight: 700;
+}
+.progress-steps .step.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: blue;
+}
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: orange;
+    transition: transform 0.3s ease;
+}
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+#signup-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+#signup-form input,
+#signup-form select {
+    width: 94%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f9fafb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#signup-form select {
+    background: #f9fafb url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%236b7280'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E") no-repeat right 15px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+#signup-form input:focus,
+#signup-form select:focus {
+    border-color: blue;
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+    outline: none;
+}
+#signup-form label {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    font-size: 16px;
+    color: #6b7280;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+#signup-form input:focus + label,
+#signup-form input:not(:placeholder-shown) + label,
+#signup-form select:focus + label,
+#signup-form select:valid + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: blue;
+    background: #f9fafb;
+    padding: 0 5px;
+    border-radius: 4px;
+}
+#payment {
+    display: none;
+}
+.payment-method {
+    margin: 30px 0;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+.payment-method p {
+    font-size: 16px;
+    font-weight: 600;
+    color: blue;
+    margin-bottom: 12px;
+}
+.payment-method label {
+    font-size: 16px;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.payment-method input[type="radio"] {
+    accent-color: blue;
+}
+.mobile-money-details {
+    padding: 15px;
+    background: orange;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid orange;
+}
+.payment-instruction {
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.payment-instruction strong {
+    color: #1e40af;
+}
+#signup-form .cta-button {
+    width: 100%;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+#signup-form .cta-button:hover {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+    #pricing {
+        padding: 70px 15px;
+    }
+    #pricing .container {
+        max-width: 100%; /* Ensure container uses full screen width */
+        padding-left: 15px; /* Consistent with section padding */
+        padding-right: 15px;
+    }
+    #pricing .grid {
+        width: 100%; /* Ensure grid spans full container width */
+        margin: 0 auto; /* Center grid within container */
+    }
+    #pricing .card {
+        width: 100%; /* Full width for flexibility */
+        max-width: 280px; /* Cap width for smaller screens */
+        min-height: 320px; /* More compact height */
+        padding: 20px; /* Reduced padding */
+        border-radius: 10px; /* Slightly smaller radius */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+        margin-inline: auto; /* Center card horizontally */
+        box-sizing: border-box; /* Ensure padding doesn’t affect width */
+    }
+    #pricing .card h3 {
+        font-size: 22px;
+    }
+    #pricing .price-main {
+        font-size: 28px;
+    }
+    #pricing .price-sub {
+        font-size: 14px;
+    }
+    #pricing .card ul li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    #pricing .card ul li::before {
+        font-size: 12px;
+        margin-right: 8px;
+    }
+    #pricing .card .cta-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    #pricing .card .cta-button i {
+        font-size: 12px;
+    }
+    #pricing .card-header .icon-wrapper {
+        width: 35px;
+        height: 35px;
+    }
+    #pricing .card-header i {
+        font-size: 18px;
+    }
+    #pricing .card.recommended::after {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    #pricing .toggle-container {
+        font-size: 16px;
+    }
+    #pricing .toggle-switch {
+        width: 60px;
+        height: 30px;
+    }
+    #pricing .toggle-slider:before {
+        height: 22px;
+        width: 22px;
+        bottom: 4px;
+        left: 4px;
+    }
+    #pricing .toggle-switch input:checked + .toggle-slider:before {
+        transform: translateX(30px);
+    }
+    #pricing .comparison-table {
+        padding: 0;
+    }
+    #pricing .comparison-table table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-radius: 15px;
+    }
+    #pricing .comparison-table th, #pricing .comparison-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+    #pricing .comparison-table td i.icon {
+        font-size: 16px;
+        margin-right: 8px;
+    }
+    .popup-content {
+        padding: 25px;
+        max-width: 90%;
+    }
+    .popup-header h3 {
+        font-size: 24px;
+    }
+    .progress-steps {
+        font-size: 12px;
+        gap: 10px;
+    }
+    #signup-form .form-group {
+        margin-bottom: 25px;
+    }
+    #signup-form input,
+    #signup-form select {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    #signup-form input {
+        width: 93%;
+    }
+    #signup-form select {
+        background-size: 14px;
+        padding-right: 35px;
+    }
+    #signup-form label {
+        font-size: 14px;
+        top: 10px;
+        left: 12px;
+    }
+    #signup-form input:focus + label,
+    #signup-form input:not(:placeholder-shown) + label,
+    #signup-form select:focus + label,
+    #signup-form select:valid + label {
+        font-size: 10px;
+        top: -8px;
+        left: 8px;
+    }
+    .payment-method {
+        margin: 25px 0;
+        padding: 12px;
+    }
+    .payment-method p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .payment-method label {
+        font-size: 14px;
+    }
+    .mobile-money-details {
+        padding: 12px;
+        margin-bottom: 25px;
+    }
+    .payment-instruction {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+    #signup-form .cta-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .popup-content {
+        padding: 20px;
+        max-width: 95%;
+    }
+    .popup-header h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .progress-steps {
+        font-size: 10px;
+        gap: 8px;
+    }
+    #signup-form .form-group {
+        margin-bottom: 20px;
+    }
+    #signup-form input,
+    #signup-form select {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    #signup-form select {
+        background-size: 12px;
+        padding-right: 30px;
+    }
+    #signup-form label {
+        font-size: 12px;
+        top: 8px;
+        left: 10px;
+    }
+    #signup-form input:focus + label,
+    #signup-form input:not(:placeholder-shown) + label,
+    #signup-form select:focus + label,
+    #signup-form select:valid + label {
+        font-size: 9px;
+        top: -7px;
+        left: 8px;
+    }
+    .payment-method {
+        margin: 20px 0;
+        padding: 10px;
+    }
+    .payment-method p {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+    .payment-method label {
+        font-size: 12px;
+        gap: 8px;
+    }
+    .mobile-money-details {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .payment-instruction {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+    #signup-form .cta-button {
+        font-size: 12px;
+        padding: 10px;
+    }
+    .close-btn {
+        font-size: 24px;
+        top: 10px;
+        right: 10px;
+    }
+}
+@media (min-width: 768px) {
+    #pricing .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #pricing .card.platinum {
+        transform: scale(1.1);
+    }
+    #pricing .card.platinum:hover {
+        transform: scale(1.15);
+    }
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+        visibility: visible;
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes popupScaleIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+        visibility: visible;
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        visibility: visible;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes popupScaleIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
