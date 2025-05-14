@@ -124,11 +124,15 @@ h2 {
 @media (max-width: 768px) {
     #contact-section {
         padding: 2.5rem 0; /* Removed horizontal padding to avoid offset */
+        box-sizing: border-box;
+        overflow-x: hidden; /* Prevent horizontal overflow */
+        width: 100%;
+        background: rgba(255, 0, 0, 0.05); /* Debugging: faint red background */
     }
     .container {
         max-width: 100%; /* Ensure container uses full screen width */
-        padding-left: 15px; /* Consistent with other sections */
-        padding-right: 15px;
+        padding-left: 5px; 
+        padding-right: 5px;
     }
     .contact-wrapper {
         grid-template-columns: 1fr;
