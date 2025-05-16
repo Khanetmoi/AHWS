@@ -30,6 +30,7 @@
     overflow: hidden;
     opacity: 0;
     animation: zoomIn 0.6s ease forwards;
+    max-width: 295px;
 }
 #services .card:hover {
     transform: scale(1.03);
@@ -156,6 +157,7 @@
         margin: 0 auto; /* Center grid within container */
     }
     #services .card {
+        /* min-width: none; */
         width: 95%; /* Slightly less than full width for subtle margins */
         min-height: 230px; /* Changed from height to min-height to allow expansion */
         margin-inline: auto;
